@@ -1,5 +1,6 @@
-package main;
+package main; //folder name
 
+//the many, many classes we import
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -11,51 +12,45 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-
 import javax.swing.JPanel;
+
+//classes we created
 import Environment.EnvironmentManager;
 import ai.PathFinder;
-//import Environment.EnvironmentManager;
-//import ai.PathFinder;
 import entity.Entity;
 import entity.Player;
-
 import tile.TileManager;
 import tileInteractive.InteractiveTile;
 
-//import entity.Player;
-public class GamePanel extends JPanel implements Runnable{
-  
-//screen settings
-  final int originalTileSize = 16; // 16x16 tile
+
+public class GamePanel extends JPanel implements Runnable{ //constructor can use Jpanel, which can implement Runnable
+
+//the instance variables
+  //screen settings
+  final int originalTileSize = 16;                        // 16x16 tile
   final int scale = 3;
-  public final int tileSize = originalTileSize * scale; // 48x48 tile
-  public final int maxScreenCol = 20;
-  public final int maxScreenRow = 12; 
-  public final int screenWidth = tileSize * maxScreenCol;//960 pixels
-  public final int screenHeight = tileSize * maxScreenRow;//576 pixels
+  public final int tileSize = originalTileSize * scale;   // 48x48 tile
+  public final int maxScreenCol = 20;                     // width of window
+  public final int maxScreenRow = 12;                     // height
+  public final int screenWidth = tileSize * maxScreenCol; // 960 pixels
+  public final int screenHeight = tileSize * maxScreenRow;// 576 pixels
   
   
-  //World Settings
-  public final int maxWorldCol = 51;
-  public final int maxWorldRow = 64;
-  public final int maxMap = 10;  // the number of maps we can create
-  public int currentMap = 0;  // the current map we are on. 
+  //world settings
+  public final int maxWorldCol = 51;  // total width of world
+  public final int maxWorldRow = 64;  // total height
+  public final int maxMap = 10;       // the number of maps we can create
+  public int currentMap = 0;          // the current map we are on 
   
-  //for Full Screen
+  //settings for full screen
   int screenWidth2 = screenWidth;
   int screenHeight2 = screenHeight;
   BufferedImage tempScreen;
   Graphics2D g2;
-  public boolean fullScreenOn = false;
-  
-  
-  
-  
+  public boolean fullScreenOn = false; //boolean to tell if it is fullscreen
   
   //FPS
   //FrameRate()
-  
   int FPS = 60;
   
   //System
@@ -117,7 +112,7 @@ public class GamePanel extends JPanel implements Runnable{
 	  // playMusic(0);
 	  gameState = titleState; 
 	  
-	  //For different Screen resize
+	  //for different screen resize
 	  tempScreen = new BufferedImage(screenWidth,screenHeight, BufferedImage.TYPE_INT_ARGB);
 	  g2 = (Graphics2D)tempScreen.getGraphics();
 	 if(fullScreenOn) {

@@ -1,5 +1,6 @@
-package main;
+package main; //the folder name
 
+//importing our classes
 import entity.NPCMerchant;
 import entity.NPCOldMAn;
 import monster.MonGreenSlime;
