@@ -32,7 +32,7 @@ public class Entity {
 	 public boolean collisionOn =  false;
 	 String dialogues[] = new String[20];
 	 
-	 //State
+	 //state
 	 public int worldX,worldY;
 	 public String direction = "down";
 	 public int spriteNum = 1;
@@ -55,7 +55,7 @@ public class Entity {
 	 public int hpBarCounter = 0;
 	 public int knockBackCounter  = 0;
 
-	 //Character attributes
+	 //character attributes
 	 public String name;
 	 public int defaultSpeed;
 	 public int speed;
@@ -80,7 +80,7 @@ public class Entity {
 	 public Projectile projectile;
 	 
 	 
-	 //Items attributes
+	 //items attributes
 	 public int value;
 	 public int attackValue;
 	 public int defenseValue;

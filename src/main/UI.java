@@ -30,7 +30,7 @@ public class UI {
 	boolean gameFinished = false;
 	public String currentDialogue = "";
 	public int commandNum = 0;
-	public int titleScreenState = 0; // state 0 is 1st screen 1 is second snd so on.	
+	public int titleScreenState = 0; //state 0 is the title screen, 1 is second and so on	
 	public int playerSlotCol = 0;
 	public int playerSlotRow = 0; 	
 	public int npcSlotCol = 0;
@@ -208,27 +208,28 @@ public class UI {
 		
 	}
 	public void drawTitleScreen() {
-		if(titleScreenState == 0) {
-		//title
-		g2.setColor(new Color(0,0,0));
-		g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
+		if(titleScreenState == 0) { //if its supposed to be the title screen...
 		
-		g2.setFont(g2.getFont().deriveFont(Font.BOLD,90F));
-		String text = "The Adventrue Game ";
-		int x = getXforCenteredText(text); 
-		int y = gp.tileSize*3;
+		//set up title text settings	
+		g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);//draw the background rectangle (to aid in animation)
+		g2.setColor(new Color(0,0,0));                     //set text color white
+		g2.setFont(g2.getFont().deriveFont(Font.BOLD,90F));//set the font
+		String text = "Search for Castle Keep";            //set what the title says
+		int x = getXforCenteredText(text);                 //set x to the middle of the screen
+		int y = gp.tileSize*3;                             //set y to 3 tiles down from the top of the screen
 		
-		//shadow color
+		//write out title shadow
 		g2.setColor(Color.gray);
 		g2.drawString(text,x+5,y+5);
 		
-		//main color
+		//write out title
 		g2.setColor(Color.white);
 		g2.drawString(text,x,y);
 		
-		//player image
-		x= gp.screenWidth/2 - gp.tileSize;
-		y+= gp.tileSize*2;
+
+		//draw player image underneath the title
+		x = gp.screenWidth/2 - gp.tileSize;
+		y += gp.tileSize*2;
 		g2.drawImage(gp.player.down1, x, y, gp.tileSize*2,gp.tileSize*2,null );
 		
 		//menu
