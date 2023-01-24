@@ -9,6 +9,7 @@ import object.ObjKey;
 import object.ObjPotionRed;
 import object.ObjShieldBlue;
 import object.ObjShieldWood;
+import object.ObjSwordExcalibur;
 import object.ObjSwordNormal;
 
 public class NPCMerchant extends Entity{
@@ -50,6 +51,7 @@ public class NPCMerchant extends Entity{
     	inventory.add(new ObjShieldWood(gp));
     	inventory.add(new ObjShieldBlue(gp));
     	inventory.add(new ObjFireBall(gp));
+		inventory.add(new ObjSwordExcalibur(gp));
     }
     
     public void speak() {

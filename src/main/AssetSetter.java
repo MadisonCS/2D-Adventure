@@ -2,6 +2,7 @@ package main;
 
 import entity.NPCMerchant;
 import entity.NPCOldMAn;
+import monster.MonSlimeHumanoid;
 import monster.MonGreenSlime;
 import monster.MonPinkSlime;
 import monster.MonRedSlime;

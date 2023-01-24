@@ -1,5 +1,5 @@
 package entity;
-
+//
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -107,6 +107,7 @@ public class Entity {
 	 public final int type_magic = 8;
 	 public final int type_obstacle = 9;
 	 public final int type_light = 10;
+	  public final int type_excalibur = 11;
 	 
 	 //public float alpha;
 	 

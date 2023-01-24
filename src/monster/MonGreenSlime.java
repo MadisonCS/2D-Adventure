@@ -18,7 +18,7 @@ public class MonGreenSlime extends Monster{
 		this.gp = gp;
 		
 		type = type_monster;
-		name = "greenSlime";
+		name = "Green Slime";
 		defaultSpeed = 1;
 		speed = defaultSpeed;
 		maxLife = 10;

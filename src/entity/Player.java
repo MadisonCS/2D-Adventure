@@ -14,6 +14,7 @@ import object.ObjLantern;
 import object.ObjPotionRed;
 import object.ObjShieldWood;
 import object.ObjSwordNormal;
+import object.ObjSwordExcalibur;
 import object.ObjAxe;
 import object.ObjFireBall;
 import object.ObjFireBallBlue;
@@ -76,7 +77,7 @@ public class Player extends Entity{
         exp = 0 ;
         nextLevelExp = 5;
         coin = 500;
-        currentWeapon = new ObjSwordNormal(gp);
+        currentWeapon = new ObjSwordExcalibur(gp);
         //currentWeapon = new ObjAxe(gp);
         currentShield = new ObjShieldWood(gp);
         projectile = new ObjFireBall(gp);
@@ -166,6 +167,15 @@ public class Player extends Entity{
     		attackLeft2 = setup("/attack/boy_axe_left_2", gp.tileSize*2, gp.tileSize);
     		attackRight1 = setup("/attack/boy_axe_right_1", gp.tileSize*2, gp.tileSize);   
     		attackRight2 = setup("/attack/boy_axe_right_2", gp.tileSize*2, gp.tileSize);
+    	} else if(currentWeapon.type == type_excalibur) {
+    		attackUp1 = setup("/attack/boy_excalibur_up_1", gp.tileSize, gp.tileSize*2);   
+    		attackUp2 = setup("/attack/boy_excalibur_up_2", gp.tileSize, gp.tileSize*2); 
+    		attackDown1 = setup("/attack/boy_excalibur_down_1", gp.tileSize, gp.tileSize*2);   
+    		attackDown2 = setup("/attack/boy_excalibur_down_2", gp.tileSize, gp.tileSize*2);
+    		attackLeft1 = setup("/attack/boy_excalibur_left_1", gp.tileSize*2, gp.tileSize);   
+    		attackLeft2 = setup("/attack/boy_excalibur_left_2", gp.tileSize*2, gp.tileSize);
+    		attackRight1 = setup("/attack/boy_excalibur_right_1", gp.tileSize*2, gp.tileSize);   
+    		attackRight2 = setup("/attack/boy_excalibur_right_2", gp.tileSize*2, gp.tileSize);
     	}
     }
 
@@ -508,7 +518,7 @@ public class Player extends Entity{
     	int itemIndex = gp.ui.getItemDescription(gp.ui.playerSlotCol,gp.ui.playerSlotRow);
     	if(itemIndex < inventory.size()) {
     		Entity selectedItem = inventory.get(itemIndex); 
-    		if(selectedItem.type == type_sword || selectedItem.type == type_axe) {
+    		if(selectedItem.type == type_sword || selectedItem.type == type_axe || selectedItem.type == type_excalibur) {
     			currentWeapon = selectedItem;
     			attack = getAttack();
     			getPlayerAttackImage();

@@ -2,7 +2,7 @@ package object;
 
 import entity.Entity;
 import main.GamePanel;
-
+//
 public class ObjSwordNormal extends Entity{
 
 	public ObjSwordNormal(GamePanel gp) {
