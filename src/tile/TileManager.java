@@ -28,6 +28,7 @@ import main.UtilityTool;
 		
 		loadMap(currentMap, 0);
 		loadMap("/map/interior01.txt",1);
+		loadMap("/map/dungeon0.txt",2);
 	}
 	public void setTile(int num, boolean pass) {
 		tile[num].collision = pass;
@@ -115,7 +116,16 @@ import main.UtilityTool;
 			setup(44, "table01", true);
 			setup(45, "floor01", false);
 			setup(46,"floor01",false);
-			
+			setup(47, "cobblestone_floor0", false);
+			//setup(48, "cobblestone_floor1", false);
+			setup(49, "cobblestone_floor2", false);
+			//setup(50, "cobblestone_floor3", false);
+			//setup(51, "cobblestone_floor4", false);
+			//setup(52, "cobblestone_floor5", false);
+			//setup(53, "cobblestone_floor6", false);
+			setup(54, "cobblestone_floor7", false);
+			setup(55, "cobblestone", true);
+			setup(56, "earth_dark", true);
 			
 	}
 	
